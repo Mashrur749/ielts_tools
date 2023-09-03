@@ -6,7 +6,7 @@ export default function Home() {
       <div className="sm:w-2/5 w-full bg-blue-500 h-full">
         <label
           htmlFor="message"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white pl-2 py-2"
         >
           Question
         </label>

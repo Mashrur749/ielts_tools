@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Stopwatch from "../StopWatch";
 
 function WordCounterTimer() {
   const [text, setText] = useState<string>("");
@@ -62,7 +63,7 @@ function WordCounterTimer() {
     <div>
       <label
         htmlFor="note"
-        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white pl-2 py-2"
       >
         Outline
       </label>
@@ -74,43 +75,22 @@ function WordCounterTimer() {
       />
       <label
         htmlFor="answer"
-        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white pl-2 py-2"
       >
         Answer
       </label>
       <textarea
         id="answer"
-        rows={40}
+        rows={20}
         className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Write your thoughts here..."
         onChange={handleTextChange}
       ></textarea>
-      <p>Word Count: {wordCount}</p>
-      <div>
-        <label>
-          Set Timer (Minutes):
-          <input
-            type="number"
-            value={minutes}
-            onChange={handleMinutesChange}
-            disabled={isRunning}
-          />
-        </label>
-        <label>
-          Set Timer (Seconds):
-          <input
-            type="number"
-            value={seconds}
-            onChange={handleSecondsChange}
-            disabled={isRunning}
-          />
-        </label>
-        {isRunning ? (
-          <button onClick={stopTimer}>Stop</button>
-        ) : (
-          <button onClick={startTimer}>Start</button>
-        )}
-      </div>
+      <h1 className="bg-orange-200 font-bold pl-2 py-2">
+        Word Count: {wordCount}
+      </h1>
+
+      <Stopwatch />
     </div>
   );
 }
